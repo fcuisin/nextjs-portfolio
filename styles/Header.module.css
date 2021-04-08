@@ -3,5 +3,55 @@
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.leftContainer {
+  display: flex;
+  justify-content: center;
+  flex: 0 0 25%;
+}
+
+.rightContainer h1 {
+  font-size: 64px;
+  margin-bottom: 10px;
+}
+
+.rightContainer p {
+  font-size: 32px;
+}
+
+.rightContainer {
+  display: flex;
   flex-direction: column;
+  flex: 0 0 75%;
+  position: relative;
+}
+
+.logo {
+  font-family: Fredoka One, sans-serif;
+  font-size: 50px;
+  position: sticky;
+  top: 200px;
+}
+
+.logo:hover {
+  transform: rotate(-360deg);
+  -webkit-transition: -webkit-transform .9s ease-in-out;
+  transition: transform .9s ease-in-out;
+}
+
+.rightContainer:before {
+  content: '<h1>';
+  color: #515152;
+  font-size: 1.6rem;
+  font-style: italic;
+  margin-bottom: 3rem;
+}
+
+.rightContainer:after {
+  content: '</h1>';
+  color: #515152;
+  font-size: 1.6rem;
+  font-style: italic;
+  margin-top: 3rem;
 }
