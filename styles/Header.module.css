@@ -41,7 +41,7 @@
 }
 
 .rightContainer:before {
-  content: '<h1>';
+  content: 'hello()';
   color: #515152;
   font-size: 1.6rem;
   font-style: italic;
@@ -49,7 +49,7 @@
 }
 
 .rightContainer:after {
-  content: '</h1>';
+  content: 'isReady ? alert(click on logo) : "Grab a coffee"';
   color: #515152;
   font-size: 1.6rem;
   font-style: italic;
