@@ -14,7 +14,6 @@ export default function Navbar() {
   const handleScroll = () => {
     if (window.scrollY > (window.innerHeight / 2)) {
       setVisible('flex');
-      console.log(visible)
     } else {
       setVisible('none');
     }
@@ -22,7 +21,6 @@ export default function Navbar() {
 
   const toggleNav = () => {
     setActive(!isActive);
-    console.log(isActive)
   }
 
   useEffect(() => {
@@ -31,6 +29,15 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', handleScroll)
 
   });
+
+  const scrollToSection = () => {
+    const href = event.target.innerHTML
+    const offsetTop = document.querySelector(`#${href}`).offsetTop;
+    window.scrollTo({
+      top: offsetTop,
+      behavior: "smooth"
+    });
+  }
 
   return (
 
@@ -44,20 +51,14 @@ export default function Navbar() {
         </div>
 
         <ul className={`${styles.navLinks} ${isActive ? styles.open : ""}`}>
-          <li>
-            <Link href="#about">
-              <a>about</a>
-            </Link>
+          <li onClick={scrollToSection}>
+            <a>about</a>
           </li>
-          <li>
-            <Link href="#skills">
-              <a>skills</a>
-            </Link>
+          <li onClick={scrollToSection}>
+            <a>skills</a>
           </li>
-          <li>
-            <Link href="#projects">
-              <a>projects</a>
-            </Link>
+          <li onClick={scrollToSection}>
+            <a>projects</a>
           </li>
         </ul>
       </nav>
